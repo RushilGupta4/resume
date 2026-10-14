@@ -1,202 +1,119 @@
-\documentclass[letterpaper,11pt]{article}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+% Resume: Classic Times layout (uppercase section titles over a full rule)
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{multicol}
+\pdfgentounicode=1
 \input{glyphtounicode}
 
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-\usepackage{charter}
-
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
 \urlstyle{same}
-
-\raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\section}{\normalfont\bfseries\MakeUppercase}{}{0pt}{}[{\vspace{1pt}\hrule height 0.6pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
 
-% Ensure that generated pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
+\newcommand{\header}[4]{%
+  \begin{center}
+    {\LARGE\bfseries\MakeUppercase{#1}}\\[4pt]
+    \href{mailto:#2}{#2} \enspace$\diamond$\enspace \href{https://#3}{#3} \enspace$\diamond$\enspace \href{#4}{Google Scholar}
+  \end{center}\vspace{-6pt}}
+% One-line heading: bold part, italic part, date on the right
+\newlength{\datewidth}
+\newcommand{\heading}[3]{%
+  \settowidth{\datewidth}{#3}%
+  \par\vspace{2pt}\parbox[t]{\dimexpr\linewidth-\datewidth-1em}{\raggedright\textbf{#1}, \mbox{\textit{#2}}}%
+  \hfill\mbox{#3}\par}
+\newenvironment{bullets}
+  {\begin{itemize}[leftmargin=1.2em,label=\textbullet,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
+  {\end{itemize}}
 \begin{document}
 
-\begin{center}
-    \textbf{\Huge \scshape RUSHIL GUPTA} \\ \vspace{2pt}
-    \small 8375911611 $|$ \href{mailto:rushilgupta4@gmail.com}{\underline{rushilgupta4@gmail.com}} $|$ \href{https://linkedin.com/in/rushilgupta4}{\underline{linkedin.com/in/rushilgupta4}} $|$ \href{https://github.com/RushilGupta4}{\underline{github.com/RushilGupta4}} \\
-\end{center}
+\header{Rushil Gupta}{rushilgupta4@gmail.com}{rushilgupta.in}{https://scholar.google.com/citations?user=yn5rnr4AAAAJ}
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Ashoka University}{}
-      {B.Sc (Hons) in Mathematics and Computer Science with Research; CGPA: 3.88/4; Major CGPA: 4/4}{Expected 2027}
-    \resumeSubheading
-      {Pathways School Noida}{}
-      {Class XII, International Baccalaureate (IB); Score: 92\%}{2023}
-  \resumeSubHeadingListEnd
-
-%-----------RELEVANT COURSEWORK-----------
-\section{Relevant Coursework}\vspace{-10pt}
-\begin{multicols}{2}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=-10pt]
-    \item Real Analysis
-    \item Metric and Topological Spaces
-    \item Design and Analysis of Algorithms
-    \item Reinforcement Learning
-    \item Introduction to Machine Learning
-    \item Introduction to Quantitative Finance
-\end{itemize}
-\end{multicols}
-
-%-----------RESEARCH EXPERIENCE-----------
-\section{Research Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Undergraduate Researcher}{Aug 2024 -- Present}
-      {Safexpress Centre for Data, Learning and Decision Sciences}{}
-      \resumeItemListStart
-        \resumeItem{Developing agent-based models to understand disease spread in India; currently exploring pruning techniques.}
-        \resumeItem{Exploring diffusion models to sample from exponentially tilted distributions using samples from the original.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Research Intern}{Feb 2024 -- Dec 2024}
-      {KOITA Centre for Digital Health Ashoka}{}
-      \resumeItemListStart
-        \resumeItem{Developed infrastructure for a cohort study integrating data steams from multiple wearables and a custom app.}
-        \resumeItem{Worked on an LLM solution to automate informed consent, leveraging agentic models for improved performance.}
-      \resumeItemListEnd
-
-    \resumeSubHeadingListEnd
-
-%-----------WORK EXPERIENCE-----------
-\section{Work Experience}
-    \resumeSubHeadingListStart
-    \resumeSubheading
-      {Platform Teams Intern}{Nov 2024 -- Jan 2025}
-      {SARVAM AI}{}
-      \resumeItemListStart
-        \resumeItem{Designed and implemented a versioning system for voice agents for incremental updates and seamless deployment.}
-        \resumeItem{Implemented the first unit and integration tests for backend microservices, improving API reliability.}
-      \resumeItemListEnd
-      \resumeSubHeadingListEnd
-
-%-----------POSITIONS OF RESPONSIBILITY-----------
-\section{Positions of Responsibility}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Head of Events}{Sep 2023 -- Present}
-      {Ashoka Computer Science Society}{}
-      \resumeItemListStart
-        \resumeItem{Led a team of 20 members in planning and executing events, including talks, workshops, and mixers.}
-        \resumeItem{Initiated Leetcode Saturdays; hosted weekly competitive programming sessions for students to solve problems.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Co-Founder and Head of Events \& Logistics}{Mar 2024 -- Dec 2024}
-      {Ashoka Health Research Club}{}
-      \resumeItemListStart
-        \resumeItem{Ideated and co-founded the club, being involved in the selection process of the core and events team.}
-        \resumeItem{Established a framework connecting students with faculty research, offering observership and internship tracks.}
-        \resumeItem{Executed a 5-day launch event series in collaboration with 4 academic societies to promote health research.}
-      \resumeItemListEnd
-      
-
-  \resumeSubHeadingListEnd
+\heading{Ashoka University}{B.Sc (Hons) in Mathematics and Computer Science with Research}{Expected 2027}
+\begin{bullets}
+  \item CGPA: 3.91/4, Major CGPA: 4.0/4.0.
+  \item Relevant Coursework: Reinforcement Learning, Machine Learning, Fourier Series, Linear Algebra and Matrix Analysis, Measure Theory, Advanced Algorithms, Cryptography, Stochastic Calculus and Mathematical Finance.
+  \item Teaching Assistantships: Reinforcement Learning, Introduction to Machine Learning, Numerical Algorithms and Optimisation, Introduction to Computer Science.
+\end{bullets}
 
 %-----------PUBLICATIONS-----------
 \section{Publications}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {\parbox{0.872\textwidth}{\textbf{Ensemble model with inherently good quality data improves early mortality prediction in ICUs}}}{Jan 2025}
-      {Critical Care Medicine}{}
-      \resumeItemListStart
-        \resumeItem{Developed a novel ensemble model and methods to identify high-quality subsets of ICU data, enhancing early mortality prediction accuracy in ICU patients by 10\%.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\heading{\href{https://arxiv.org/abs/2609.12513}{A Splitting Method for SDE Terminal-Law Estimation}}{MLxOR @ NeurIPS 2026}{Sep 2026}
+\begin{bullets}
+  \item Path-splitting method for SDE sampling under a fixed budget; 12--26\% lower KS error than i.i.d.\ sampling.
+\end{bullets}
 
-%-----------TECHNICAL SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \item{
-      \textbf{Languages}{: Python, JavaScript, Julia, Scala, OCaml, HTML, CSS} \\
-      \textbf{Frameworks}{: PyTorch, FastAPI, Django, Pandas, NextJs, React Native, LangChain} \\
-      \textbf{Tools}{: Docker, Git, CI/CD, AWS, GCP, Firebase, PostgreSQL, Redis} \\
-    }
- \end{itemize}
+\heading{\href{https://arxiv.org/abs/2512.23979}{Fundamental limits for weighted empirical approximations of tilted distributions}}{AISTATS 2026}{Jan 2026}
+\begin{bullets}
+  \item Provided scaling limits for empirical reweighted estimators, characterizing regimes where the estimator is accurate.
+\end{bullets}
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience}
+\heading{Stanford University}{Undergraduate Visiting Intern}{Jul 2026 -- Aug 2026}
+\begin{bullets}
+  \item Working with Prof.~Peter Glynn on using ideas from Empirical Bayes to improve estimates in simulation models.
+\end{bullets}
+
+\heading{Safexpress Centre for Data, Learning and Decision Sciences}{Undergraduate Researcher}{Aug 2024 -- Present}
+\begin{bullets}
+  \item Developed a provably efficient estimator for simulating stochastic differential equations under a fixed budget.
+  \item Analyzed the sample complexity of diffusion models for accurately modeling reweighted distributions.
+  \item Developed methods that use small agent-based models to approximate the spread of disease in larger models.
+\end{bullets}
+
+\heading{Joint Cipher Bureau (DRDO)}{Research Intern}{Jan 2026 -- Present}
+\begin{bullets}
+  \item Studied the mathematical foundations of post-quantum cryptography, from lattice problems to lattice-based IBE.
+  \item Built a scheme-agnostic PKI for offline post-quantum key distribution, with a KDC issuing lab certificates for mTLS.
+\end{bullets}
+
+\heading{KOITA Centre for Digital Health Ashoka}{Research Intern}{Feb 2024 -- Dec 2024}
+\begin{bullets}
+  \item Developed infrastructure for a cohort study integrating data streams from multiple wearables and a custom app.
+  \item Worked on an LLM solution to automate informed consent, leveraging agentic models for improved performance.
+\end{bullets}
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+\heading{ML Researcher}{Truth Audit Labs}{May 2026 -- Jun 2026}
+\begin{bullets}
+  \item Generated synthetic data and trained a policy monitor to flag policy-violating text in organizational messages.
+  \item Red-teamed LLM assistants via prompt injection to override or leak system prompts and elicit harmful outputs.
+\end{bullets}
+
+\heading{Platform Teams Intern}{Sarvam AI}{Nov 2024 -- Jan 2025}
+\begin{bullets}
+  \item Designed and implemented a versioning system for voice agents for incremental updates and seamless deployment.
+  \item Part of the core team that owned the agents platform frontend and maintained several of its backend microservices.
+  \item Implemented the first unit and integration tests for backend microservices, improving API reliability.
+\end{bullets}
+
+%-----------POSITIONS OF RESPONSIBILITY-----------
+\section{Positions of Responsibility}
+\heading{Head of Events}{Ashoka Computer Science Society}{Sep 2024 -- May 2025}
+\begin{bullets}
+  \item Led a team of 20 members in planning and executing events, including talks, workshops, and mixers.
+  \item Initiated Leetcode Saturdays; hosted weekly competitive programming sessions for students to solve problems.
+\end{bullets}
+
+\heading{Co-Founder and Head of Events \& Logistics}{Ashoka Health Research Club}{Mar 2024 -- Dec 2024}
+\begin{bullets}
+  \item Ideated and co-founded the club, being involved in the selection process of the core and events team.
+  \item Established a framework connecting students with faculty research, offering observership and internship tracks.
+\end{bullets}
+
+%-----------SERVICE AND ACTIVITIES-----------
+\section{Service and Activities}
+\heading{Reviewer}{ICLR 2027}{2026}
+\heading{Squash Team Member}{Ashoka University}{2023 -- Present}
 
 \end{document}
